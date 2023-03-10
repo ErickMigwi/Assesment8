@@ -2,11 +2,15 @@ import React from 'react'
 import {  NavLink } from 'react-router-dom'
 function NavBar() {
   return (
-    <div>
-        <h1>Products Store</h1>
-<button><NavLink to={'/'}>Home</NavLink></button>
-     <button> <NavLink to={'/posts'}>Posts</NavLink></button>
-<button><NavLink to={'/onePost'}>OnePosts</NavLink></button>
+    <div id='NavBar'>
+        <div id='logo'>
+        <h1>POSTS</h1>
+        </div>
+        <div id='nav'>
+<NavLink id='button' to={'/'} activeclassName="active-link" >Home</NavLink>
+      <NavLink  id='button' to={'/posts'} activeclassName="active-link">Posts</NavLink>
+<NavLink  id='button' to={'/onePost'} activeclassName="active-link">OnePosts</NavLink>
+</div>
     </div>
   )
 }

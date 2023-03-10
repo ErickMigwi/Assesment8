@@ -1,5 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react';
 import axios from 'axios';
+
 export const PostContext = createContext([])
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -19,11 +20,11 @@ function Posts() {
 
   return (
     <PostContext.Provider value={posts}>
-    <div>
+    <div id='posts'>
       {posts?.map(post => (
-        <div key={post.id}>
+        <div id='post' key={post.id}>
           <h2>{post.title}</h2>
-          <p>{post.body}</p>
+          <p id='paragraph'>{post.body}</p>
         </div>
       ))}
     </div>

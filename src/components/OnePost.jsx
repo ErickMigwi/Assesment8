@@ -13,6 +13,7 @@ function OnePost() {
     setId(value)
     console.log(id);
     console.log(post);
+    
     }
     const filteredPost = post.find(p => p.id === id)
   return (
