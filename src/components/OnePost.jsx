@@ -4,15 +4,13 @@ import { PostsContext } from '../App'
 function OnePost() {
     let post = useContext(PostsContext)
     const [value, setValue] = useState(0)
-    const [id, setId] = useState(0)
+  
     const [onePost, setOnePost] = useState([])
     let handleChange = (e)=>{
    setValue(e.target.value)
 //    console.log(value);
     }
     let handleClick = ()=>{
-    setId(value)
-    console.log(id);
     console.log(post);
     post.map((item)=>{
         if(item.id==value){
@@ -27,12 +25,13 @@ function OnePost() {
     
   return (
     <div>
-
+     <div id="input">
         <h1>Enter id:</h1>
         <label> Id:
       <input type="text" onChange={handleChange} />
       <button onClick={handleClick}>submit</button>
       </label>
+      </div>
       
       {onePost ? (
           <div id='post'>
@@ -40,7 +39,7 @@ function OnePost() {
             <p>{onePost.body}</p>
           </div>
         ) : (
-          <p>No post found with id: {id}</p>
+          <p>No post found with id: {value}</p>
         )}
     </div>
   )

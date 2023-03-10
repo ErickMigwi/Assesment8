@@ -7,9 +7,9 @@ function NavBar() {
         <h1>POSTS</h1>
         </div>
         <div id='nav'>
-<NavLink id='button' to={'/'} activeclassName="active-link" >Home</NavLink>
-      <NavLink  id='button' to={'/posts'} activeclassName="active-link">Posts</NavLink>
-<NavLink  id='button' to={'/onePost'} activeclassName="active-link">OnePosts</NavLink>
+<NavLink id='button' to={'/'} activeClassName="active" >Home</NavLink>
+      <NavLink  id='button' to={'/posts'} activeClassName="active">Posts</NavLink>
+<NavLink  id='button' to={'/onePost'} activeClassName="active">OnePosts</NavLink>
 </div>
     </div>
   )

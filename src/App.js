@@ -29,7 +29,18 @@ function App() {
      <Route path='/posts' element={<Posts/>}/>
      <Route path='/onePost' element={<OnePost/>}/>
      </Routes>
+    <div id='footer'>
+      <div>
+      <h3>Copyright© </h3>
+      </div>
+      <div id='contact'>
+      <h2>Find Me On</h2>
+      <h3>Contact:0112205506</h3>
+      </div>
+
+    </div>
      </PostsContext.Provider>
+     
     </div>
   );
 }
