@@ -1,10 +1,11 @@
 import React, {useState, useContext} from 'react'
-import { PostContext } from './Posts'
+import { PostsContext } from '../App'
 
 function OnePost() {
-    let post = useContext(PostContext)
+    let post = useContext(PostsContext)
     const [value, setValue] = useState(0)
     const [id, setId] = useState(0)
+    const [onePost, setOnePost] = useState([])
     let handleChange = (e)=>{
    setValue(e.target.value)
 //    console.log(value);
@@ -13,9 +14,17 @@ function OnePost() {
     setId(value)
     console.log(id);
     console.log(post);
-    
+    post.map((item)=>{
+        if(item.id==value){
+            setOnePost(item)
+            console.log(onePost);
+        }
+        else{
+            console.log("No Matching Number");
+        }
+    })
     }
-    const filteredPost = post.find(p => p.id === id)
+    
   return (
     <div>
 
@@ -25,10 +34,10 @@ function OnePost() {
       <button onClick={handleClick}>submit</button>
       </label>
       
-      {filteredPost ? (
-          <div>
-            <h2>{filteredPost.title}</h2>
-            <p>{filteredPost.body}</p>
+      {onePost ? (
+          <div id='post'>
+            <h2>{onePost.title}</h2>
+            <p>{onePost.body}</p>
           </div>
         ) : (
           <p>No post found with id: {id}</p>
